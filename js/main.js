@@ -35,13 +35,14 @@ function main(){
     var shellInput =  document.getElementById("textConsole-inputLine");
     if(event.keyCode==13 && shellInput.style.display != "none")
     {
-      clear();
       var shellInput =  document.getElementById("textConsole-inputLine");
+      shell.innerHTML += "<br/><br/>" + shellInput.value + "<br/>";
       var cmd = shellInput.value; /* so it doesn't change while we're working on it */
-      if(shellInput.value != "")
+      shellInput.value="";
+      if(cmd != "")
       {
         var result="";
-        var userNumber = document.getElementById("textConsole-inputLine").value;
+        var userNumber = cmd;
         var factoring = function(n) {
           var m = n;
           var o = n;
@@ -65,7 +66,15 @@ function main(){
           return result;
         }
       }
-      shellWrite(factoring(userNumber));
+      var res=factoring(userNumber);
+      if(res)
+      {
+        shellWrite(res);
+      }
+      else
+      {
+        shellWrite("none");
+      }
     }
   })
 }
