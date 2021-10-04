@@ -1,20 +1,4 @@
 <!DOCTYPE html>
-<!--   This file is part of The Unnamed Game.
-
-    The Unnamed Game is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    The Unnamed Game is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with The Unnamed Game.  If not, see <http://www.gnu.org/licenses/>.
--->
-
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -27,3 +11,21 @@
     <!-- Page setup stuff. Also initializes the game and has main loop. -->
     <script src="js/main.js"></script>
   </head>
+  <body onload="main();">
+     <div id="textConsole" class="popOverBg">
+      <!-- Modal content -->
+      <div id="popOverContainer">
+        <div class="textConsole-content">
+          <div> <!-- top bar for console -->
+            <span id="shellTitle">Factoring Console</span>
+            <span id="closeShell">&times;</span>
+          </div>
+          <br/>
+          <pre id="textConsole-body"></pre>
+          <br/>
+        </div>
+        <input id="textConsole-inputLine" type="text" name="shellCmd">
+      </div>
+    </div>
+  </body>
+</html>
